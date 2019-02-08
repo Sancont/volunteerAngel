@@ -1,6 +1,6 @@
-package org.launchcode.models.data;
+package org.Sandra.models.data;
 
-import org.launchcode.models.Volunteer;
+import org.Sandra.models.Volunteer;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
