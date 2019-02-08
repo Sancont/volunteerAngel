@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+
+<body class="container">
+
+<h1 th:text="${title}">Default Title</h1>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<p th:unless="${volunteers} and ${volunteers.size()}">no volunteers :(</p>
+
+
+<table class="table">
+
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Ministry</th>
+    </tr>
+
+    <tr th:each="volunteer : ${volunteers}">
+        <td th:text="${volunteer.name}"></td>
+        <td th:text="${volunteer.lastName}"></td>
+        <td th:text="${volunteer.ministry.name}"></td>
+    </tr>
+
+</table>
+
+<a href="/volunteer/add">Add</a> |
+<a href="/volunteer/remove">Remove</a>
+</body>
+</html>

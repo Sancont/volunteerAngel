@@ -8,22 +8,22 @@
 
 <nav th:replace="fragments :: navigation"></nav>
 
-<p th:unless="${categories} and ${categories.size()}">no categories :(</p>
+<p th:unless="${ministries} and ${ministries.size()}">no ministries :(</p>
 
 
 <table class="table">
 
     <tr>
-        <th>Category</th>
+        <th>Ministry</th>
     </tr>
 
-    <tr th:each="category : ${categories}">
-        <td><a th:href="@{/cheese/category(id=${category.id})}" th:text="${category.name}"></a></td>
+    <tr th:each="ministry : ${ministries}">
+        <td><a th:href="@{/volunteer/ministry(id=${ministry.id})}" th:text="${ministry.name}"></a></td>
     </tr>
 
 </table>
 
-<a href="/category/add">Add Category</a>
+<a href="/ministry/add">Add Ministry</a>
 
 </body>
 </html>

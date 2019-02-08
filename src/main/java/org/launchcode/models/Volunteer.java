@@ -9,7 +9,7 @@ import java.util.List;
  * Created by LaunchCode
  */
 @Entity
-public class Cheese {
+public class Volunteer {
 
     @Id
     @GeneratedValue
@@ -21,20 +21,20 @@ public class Cheese {
 
     @NotNull
     @Size(min=1, message = "Description must not be empty")
-    private String description;
+    private String lastName;
 
     @ManyToOne
-    private Category category;
+    private Ministry ministry;
 
-    @ManyToMany(mappedBy = "cheeses")
-    private List<Menu> menus;
+    @ManyToMany(mappedBy = "volunteers")
+    private List<Mass> masses;
 
-    public Cheese(String name, String description) {
+    public Volunteer(String name, String lastName) {
         this.name = name;
-        this.description = description;
+        this.lastName = lastName;
     }
 
-    public Cheese() { }
+    public Volunteer() { }
 
     public int getId() {
         return id;
@@ -48,20 +48,20 @@ public class Cheese {
         this.name = name;
     }
 
-    public String getDescription() {
-        return description;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public Category getCategory() {
-        return category;
+    public Ministry getMinistry() {
+        return ministry;
     }
 
-    public void setCategory(Category category) {
-        this.category = category;
+    public void setMinistry(Ministry ministry) {
+        this.ministry = ministry;
     }
 
 }

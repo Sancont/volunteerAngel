@@ -2,19 +2,67 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:fragment="head">
     <meta charset="UTF-8"/>
-    <title th:text="${title}">My Cheeses</title>
+    <title th:text="${title}">My Volunteers</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+   <!-- <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootswatch-lumen/4.0.0/bootstrap.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/jquery-ui/jquery-ui.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/font-awesome/5.0.10/web-fonts-with-css/css/fontawesome-all.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/event-log.css}"/>-->
 </head>
 <body>
 
-<nav th:fragment="navigation">
-    <a href="/cheese">Home</a> |
-    <a href="/category">Categories</a> |
-    <a href="/menu">Menus</a>
-</nav>
+<!-- <header th:fragment="header">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" th:href="@{/}">Event Log</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto" th:if="${#authorization.expression('isAuthenticated()')}">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/}">Events</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/volunteers}">Volunteers</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item" th:if="${#authorization.expression('isAuthenticated()')}">
+                    <form th:action="@{/logout}" method="post" name="logoutForm"></form>
+                    <a class="nav-link" href="#" onclick="document.logoutForm.submit()"><i class="fas fa-sign-out-alt"></i> Log Out</a>
+                </li>
+                <li class="nav-item" th:if="${#authorization.expression('!isAuthenticated()')}">
+                    <a class="nav-link" th:href="@{/register}"><i class="fas fa-user"></i> Register</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<div th:fragment="messages" class="container-fluid">
+    <div th:if="${message != null}"
+         th:with="parts=${#strings.arraySplit(message, '|')}"
+         th:attr="class=${'alert alert-dismissible alert-' + parts[0]}"
+         role="alert">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <div th:text="${parts[1]}"></div>
+    </div>
+</div>
+
+<div th:fragment="scripts">
+    <script type="text/javascript" th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    <script type="text/javascript" th:src="@{/webjars/jquery-ui/jquery-ui.min.js}"></script>
+    <script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+</div>-->
+
+<div class="nav" th:fragment="navigation">
+    <a href="/volunteer">Volunteer</a> |
+    <a href="/ministry">Ministry</a> |
+    <a href="/mass">Mass</a>
+</div>
 
 </body>
 </html>

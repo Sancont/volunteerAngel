@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+    <head th:replace="fragments :: head"></head>
+    <body class="container">
+        <h1 th:text="${title}">Default Title</h1>
+
+        <nav th:replace="fragments :: navigation"></nav>
+
+        <form method="post" th:object="${form}" action="/mass/add-volunteer">
+            <div class="form-group">
+                <label th:for="volunteerId">Volunteer</label>
+                <select name="volunteerId">
+                    <option th:each="volunteer: *{volunteers}"
+                            th:text="${volunteer.name}"
+                            th:value="${volunteer.id}"></option>
+                </select>
+            </div>
+            <input type="hidden" name="massId" th:value="*{mass.id}" />
+            <input type="submit" value="Add Volunteer" />
+        </form>
+
+    </body>
+</html>

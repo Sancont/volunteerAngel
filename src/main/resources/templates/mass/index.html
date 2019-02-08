@@ -8,20 +8,20 @@
 
         <nav th:replace="fragments :: navigation"></nav>
 
-        <p th:unless="${menus} and ${menus.size()}">no menus :(</p>
+        <p th:unless="${masses} and ${masses.size()}">no masses :(</p>
 <div>
     <table class="table">
         <tr>
-            <th>Menus Available</th>
+            <th>Masses Available</th>
         </tr>
     </table>
     <ul>
-        <li th:each="menu : ${menus}">
-            <a th:href="'/menu/view/' + ${menu.id}" th:text="${menu.name}"></a>
+        <li th:each="mass : ${masses}">
+            <a th:href="'/mass/view/' + ${mass.id}" th:text="${mass.name}"></a>
         </li>
     </ul>
 </div>
 
-        <a href="/menu/add">Add Menu</a>
+        <a href="/mass/add">Add Mass</a>
     </body>
 </html>

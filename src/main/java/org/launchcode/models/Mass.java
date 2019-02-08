@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Menu {
+public class Mass {
 
     @Id
     @GeneratedValue
@@ -18,12 +18,12 @@ public class Menu {
     private String name;
 
     @ManyToMany
-    private List<Cheese> cheeses= new ArrayList<>();
+    private List<Volunteer> volunteers = new ArrayList<>();
 
-    public Menu(){}
+    public Mass(){}
 
-    public void addItem(Cheese item){
-        cheeses.add(item);
+    public void addItem(Volunteer item){
+        volunteers.add(item);
     }
     public int getId() {
         return id;
@@ -34,10 +34,10 @@ public class Menu {
     public void setName(String name) {
         this.name = name;
     }
-    public List<Cheese> getCheeses() {
-        return cheeses;
+    public List<Volunteer> getVolunteers() {
+        return volunteers;
     }
-    public Menu(String name){
+    public Mass(String name){
         this.name=name;
     }
 

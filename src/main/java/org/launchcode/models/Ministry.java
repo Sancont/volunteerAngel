@@ -7,7 +7,7 @@ package org.launchcode.models;
         import java.util.List;
 
 @Entity
-public class Category {
+public class Ministry {
 
     @Id
     @GeneratedValue
@@ -18,12 +18,12 @@ public class Category {
     private String name;
 
     @OneToMany
-    @JoinColumn(name="category_id")
-    private List<Cheese> cheeses= new ArrayList<>();
+    @JoinColumn(name="ministry_id")
+    private List<Volunteer> volunteers = new ArrayList<>();
 
-    public Category() { }
+    public Ministry() { }
 
-    public Category(String name) {
+    public Ministry(String name) {
         this.name = name;
     }
     public int getId() {
@@ -32,8 +32,8 @@ public class Category {
     public String getName() {
         return name;
     }
-    public List<Cheese> getCheeses() {
-        return cheeses;
+    public List<Volunteer> getVolunteers() {
+        return volunteers;
     }
     public void setName(String name) {
         this.name = name;
