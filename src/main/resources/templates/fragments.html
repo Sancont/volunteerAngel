@@ -5,6 +5,7 @@
     <title th:text="${title}">My Volunteers</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" th:href="@{/css/styles.css}"/>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
    <!-- <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootswatch-lumen/4.0.0/bootstrap.min.css}"/>
     <link rel="stylesheet" type="text/css" th:href="@{/webjars/jquery-ui/jquery-ui.min.css}"/>
@@ -58,10 +59,16 @@
     <script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
 </div>-->
 
+
+
 <div class="nav" th:fragment="navigation">
-    <a href="/volunteer">Volunteer</a> |
-    <a href="/ministry">Ministry</a> |
+    <a href="/volunteer">Volunteer</a>
+    <a href="/ministry">Ministry</a>
     <a href="/mass">Mass</a>
+</div>
+
+<div class="pic" th:fragment="picture">
+    <img src="/images/communion.jpg" alt="HTML5 Icon" width="500" height="300"> </img>
 </div>
 
 </body>

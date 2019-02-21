@@ -3,11 +3,10 @@
 <head th:replace="fragments :: head"></head>
 
 <body class="container">
+<nav th:replace="fragments :: navigation"></nav>
+<pic th:replace="fragments :: picture"></pic>
 
 <h1 th:text="${title}">Default Title</h1>
-
-<nav th:replace="fragments :: navigation"></nav>
-
 <p th:unless="${ministries} and ${ministries.size()}">no ministries :(</p>
 
 

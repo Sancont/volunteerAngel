@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
     <head th:replace="fragments :: head"></head>
-    <body class="container">
-        <h1 th:text="${title}">Default Title</h1>
 
-        <nav th:replace="fragments :: navigation"></nav>
+    <body class="container">
+    <nav th:replace="fragments :: navigation"></nav>
+    <pic th:replace="fragments :: picture"></pic>
+
+    <h1 th:text="${title}">Default Title</h1>
 
         <form method="post" th:object="${form}" action="/mass/add-volunteer">
             <div class="form-group">
