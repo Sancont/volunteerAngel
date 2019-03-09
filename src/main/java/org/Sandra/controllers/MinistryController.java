@@ -15,7 +15,7 @@ import javax.validation.Valid;
 
 @Controller
 @RequestMapping("ministry")
-public class MinistryController {
+public class MinistryController extends AbstractBaseController {
     @Autowired
     private MinistryDao ministryDao;
 

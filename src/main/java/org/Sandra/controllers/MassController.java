@@ -15,7 +15,7 @@ import javax.validation.Valid;
 
 @Controller
 @RequestMapping("mass")
-public class MassController {
+public class MassController extends AbstractBaseController {
     @Autowired
     VolunteerDao volunteerDao;
 

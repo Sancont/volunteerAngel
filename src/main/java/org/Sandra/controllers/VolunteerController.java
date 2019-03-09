@@ -21,7 +21,7 @@ import java.util.List;
  */
 @Controller
 @RequestMapping("volunteer")
-public class VolunteerController {
+public class VolunteerController extends AbstractBaseController {
 
     @Autowired
     VolunteerDao volunteerDao;
